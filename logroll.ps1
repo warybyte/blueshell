@@ -9,19 +9,16 @@
 #
 # Win32_OpenSSH: https://github.com/PowerShell/Win32-OpenSSH/releases/tag/V8.6.0.0p1-Beta
 ##############################################################################################
-
-# First, define yesterdays date
+# Zero, define your stuff
+$logpath = "C:\Users\User\Downloads\OpenSSH-Win64\logs"
 $yesterday = (get-date).adddays(-1)
-
-# Second, define the log file labeled for yesterday
 $ylog = Get-ChildItem .\logs -Filter *$(get-date -date $yesterday -Format "yyyy-MM-dd")* | select name
 
 # ...you might think we're done, but NOOOO! You have to further re-define this variable to knock off
 # the 'Name' header attached.
-$rlog = $ylog.Name
+$ylog = $ylog.Name
 
-# Transmit $ylog to secondary log server. I'm using SCP because I loath anything that requires me 
-# opening a session and feeding in crap (S/FTP, FTPS, FTP, TELNET, etc...)
+# Transmit via SCP...because I loath anything that requires opening a session...
 C:\Users\User\Downloads\OpenSSH-Win64\scp.exe .\logs\$rlog user@secondlog.lcl:./path/to/logs
 
 # Of course we want to automate this, so call the PS1 from your TaskScheduler and call it a day,
