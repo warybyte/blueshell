@@ -1,0 +1,22 @@
+======================================================
+                    Edit Action                  [X]
+______________________________________________________                    
+Action: [Start a program                        v]
+  Settings ------------------------------------------
+  
+   Program/script:
+   [Powershell.exe                 ] [Browse...]
+   
+   Add arguments (optional):          [-Executi...]
+   Start in (optional):               [           ]
+   
+   
+   
+   --------------------------------------------------
+                            [   Ok   ] [ Cancel ]
+=======================================================
+   
+Note: Make sure to list out your intended script after
+the 'ExecutionPolicy' bit
+   
+   -ExecutionPolicy Bypass C:\Users\Administrator\Desktop\logroll.ps1
