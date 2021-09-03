@@ -1,10 +1,13 @@
 ############################################################################################## 
 # PS1 script for transmitting previous day logs to Secondary log server
 #
-# Assumptions - file-yyyy-mm-dd.log is the file format...pretty standard, but up to you.
+# Assumptions - file-yyyy-mm-dd.log is the file format...change as you need
+#             - transmission via something like Win32_OpenSSH
 #
 # change timestamps...if you want to make some test files...
 # get-childitem .\log-2021-09-01.txt | % {$_.LastWriteTime = '09/01/2021 06:00:00'}
+#
+# Win32_OpenSSH: https://github.com/PowerShell/Win32-OpenSSH/releases/tag/V8.6.0.0p1-Beta
 ##############################################################################################
 
 # First, define yesterdays date
